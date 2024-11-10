@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Question from './Question';
 import Result from './Result';
 import './Quiz.css';
+import ProgBar from './progbar';
 
 const questions = [
     {
@@ -77,12 +78,22 @@ function Quiz() {
         setShowResult(true);
     };
 
+
+    // Calculate progress based on answered questions
+    const answeredCount = answers.filter(answer => answer !== null).length;
+    const progress = (answeredCount / questions.length) * 100;
+
     return (
         <div className="quiz">
             {showResult ? (
                 <Result score={score} totalQuestions={questions.length} />
             ) : (
                 <div>
+                    <ProgBar
+                        progress={progress}
+                        answeredCount={answeredCount}
+                        totalQuestions={questions.length}
+                    />
                     {questions.map((question, index) => (
                         <Question
                             key={index}

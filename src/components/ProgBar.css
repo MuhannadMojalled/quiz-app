@@ -1,0 +1,36 @@
+/* ProgressBar.css */
+.prog-bar-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #007bff;
+    ;
+    /* Matches the page background to blend well */
+    padding: 15px;
+    /* Optional padding for spacing */
+    margin-bottom: 10px;
+    border-radius: 15px;
+
+}
+
+.prog-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+.prog-bar__fill {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.prog-bar-container p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    color: #e0e0e0;
+}
